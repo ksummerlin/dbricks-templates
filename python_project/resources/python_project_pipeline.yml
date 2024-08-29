@@ -1,0 +1,12 @@
+# The main pipeline for python_project
+resources:
+  pipelines:
+    python_project_pipeline:
+      name: python_project_pipeline
+      target: python_project_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
